@@ -123,7 +123,9 @@ class DeviceSelectionPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Select Device', style: TextStyle(color: Colors.white)),
         backgroundColor: primaryBlue,
+        centerTitle: true,
         elevation: 0,
+        automaticallyImplyLeading: false,
       ),
       body: Container(
         decoration: const BoxDecoration(
