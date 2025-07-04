@@ -1,5 +1,5 @@
 import 'package:get/get.dart';
-import 'package:ropay_app/pages/analytics/analytics_page.dart';
+import 'package:ropay_app/pages/bills/bills_page.dart';
 import 'package:ropay_app/pages/device_selection/device_selection_screen.dart';
 import 'package:ropay_app/pages/home_screen/home_screen.dart';
 import 'package:ropay_app/pages/login_screen/login_screen.dart';

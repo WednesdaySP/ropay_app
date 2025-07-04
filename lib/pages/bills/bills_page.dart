@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ropay_app/constants/colors.dart';
 
-class SubscriptionsPage extends StatelessWidget {
-  const SubscriptionsPage({super.key});
+class AnalyticsPage extends StatelessWidget {
+  const AnalyticsPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Subscriptions', style: TextStyle(color: black)),
+        title: const Text('Bills', style: TextStyle(color: black)),
         backgroundColor: white,
         elevation: 0,
         centerTitle: true,
@@ -19,7 +19,7 @@ class SubscriptionsPage extends StatelessWidget {
         ),
       ),
       body: Container(
-        // decoration:  BoxDecoration(
+        // decoration: BoxDecoration(
         //   gradient: LinearGradient(
         //     begin: Alignment.topCenter,
         //     end: Alignment.bottomCenter,
@@ -27,7 +27,7 @@ class SubscriptionsPage extends StatelessWidget {
         //   ),
         // ),
         child: const Center(
-          child: Text('Subscriptions Page', style: TextStyle(fontSize: 24, color: primaryBlue)),
+          child: Text('Bills Page', style: TextStyle(fontSize: 24, color: primaryBlue)),
         ),
       ),
     );

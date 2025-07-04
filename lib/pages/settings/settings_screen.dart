@@ -11,7 +11,7 @@ class SettingsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: black),
+          icon: const Icon(Icons.arrow_back_ios, color: black),
           onPressed: () => Get.back(),
         ),
         title: const Text('Settings', style: TextStyle(color: black)),
@@ -20,13 +20,13 @@ class SettingsPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: [Colors.lightBlue[100]!, accentBlue],
-          ),
-        ),
+        // decoration: BoxDecoration(
+        //   gradient: LinearGradient(
+        //     begin: Alignment.topCenter,
+        //     end: Alignment.bottomCenter,
+        //     colors: [Colors.lightBlue[100]!, accentBlue],
+        //   ),
+        // ),
         child: ListView(
           padding: const EdgeInsets.all(16.0),
           children: const [
@@ -53,22 +53,22 @@ class SettingsPage extends StatelessWidget {
             SettingsItem(
               icon: Icons.payment,
               title: 'Payment',
-              onTap: null, // Replace with navigation to payment settings
+              onTap: null,
             ),
             SettingsItem(
               icon: Icons.language,
               title: 'Language',
-              onTap: null, // Replace with navigation to language settings
+              onTap: null, 
             ),
             SettingsItem(
               icon: Icons.help_outline,
               title: 'Help',
-              onTap: null, // Replace with navigation to help screen
+              onTap: null, 
             ),
             SettingsItem(
               icon: Icons.logout,
               title: 'Logout',
-              onTap: null, // Replace with logout logic
+              onTap: null,
             ),
           ],
         ),

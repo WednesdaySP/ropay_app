@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ropay_app/routes/app_routes.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+         primaryTextTheme: GoogleFonts.poppinsTextTheme(),
+        //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       initialRoute: AppRoutes.register,
       getPages: AppRoutes.routes,

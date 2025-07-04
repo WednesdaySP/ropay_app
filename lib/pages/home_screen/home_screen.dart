@@ -36,15 +36,15 @@ class HomePage extends StatelessWidget {
                       children: [
                         Text(
                           'Good Morning,',
-                          style: TextStyle(fontSize: 16, color: black,fontWeight: FontWeight.w500),
+                          style: TextStyle(fontSize: 14, color: black,fontWeight: FontWeight.w500),
                         ),
                         Text(
                           'User Name',
-                          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: white),
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: white),
                         ),
                       ],
                     ),
-                    Icon(Icons.notifications_active_outlined, color: black,size: 30,),
+                    Icon(Icons.notifications_active_outlined, color: black,size: 28,),
                   ],
                 ),
                 const SizedBox(height: 8),

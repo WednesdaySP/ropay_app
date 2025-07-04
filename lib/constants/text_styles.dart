@@ -1,11 +1,12 @@
 // Text Styles
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:ropay_app/constants/colors.dart';
 
-const TextStyle titleStyle = TextStyle(
-  fontSize: 32,
-  fontWeight: FontWeight.bold,
-  color: primaryBlue,
+ const TextStyle titleStyle = TextStyle(
+  fontSize: 20,
+  fontWeight: FontWeight.w600,
+  color: black,
 );
 
 const TextStyle buttonTextStyle = TextStyle(
@@ -29,7 +30,7 @@ InputDecoration customInputDecoration(String label, String? errorText) {
   return InputDecoration(
     labelText: label,
     labelStyle: labelStyle,
-    contentPadding: EdgeInsets.all(16),
+    contentPadding: EdgeInsets.symmetric(vertical: 12,horizontal: 16),
     border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
         borderSide: BorderSide(color: Colors.black, width: 1)),
