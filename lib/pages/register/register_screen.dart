@@ -23,9 +23,17 @@ class RegisterPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
-                Text(
-                  registerTitle,
+                Image.asset('assets/images/droplet.jpg', width: 90, height: 80,),
+                const SizedBox(height: 16,),
+                const Text(
+                  "Ropay Registertion",
                   style: titleStyle,
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 8,),
+                const Text(
+                  "Get Started with Ropay! Register to connect your tap device and track your water consumption.",
+                  style: labelStyle,
                   textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 32),
@@ -45,17 +53,42 @@ class RegisterPage extends StatelessWidget {
                     )),
                 const SizedBox(height: 16),
                 Obx(() => CustomTextField(
-                      controller: controller.locationController,
-                      label: locationLabel,
-                      errorText: controller.locationError.value,
-                      onChanged: (_) => controller.validateLocation(),
+                      controller: controller.addressController,
+                      label: 'Complete Address',
+                      errorText: controller.addressError.value,
+                      onChanged: (_) => controller.validateAddress(),
+                    )),
+                const SizedBox(height: 16),
+                Obx(() => CustomTextField(
+                      controller: controller.cityController,
+                      label: 'City',
+                      errorText: controller.cityError.value,
+                      onChanged: (_) => controller.validateCity(),
+                    )),
+                const SizedBox(height: 16),
+                Obx(() => CustomTextField(
+                      controller: controller.stateController,
+                      label: 'State',
+                      errorText: controller.stateError.value,
+                      onChanged: (_) => controller.validateState(),
+                    )),
+                const SizedBox(height: 16),
+                Obx(() => CustomTextField(
+                      controller: controller.pincodeController,
+                      label: 'Pincode',
+                      errorText: controller.pincodeError.value,
+                      keyboardType: TextInputType.number,
+                      onChanged: (_) => controller.validatePincode(),
                     )),
                 const SizedBox(height: 24),
                 Obx(() => CustomButton(
                       isLoading: controller.isLoading.value,
                       isEnabled: controller.nameError.value.isEmpty &&
                           controller.mobileError.value.isEmpty &&
-                          controller.locationError.value.isEmpty,
+                          controller.addressError.value.isEmpty &&
+                          controller.cityError.value.isEmpty &&
+                          controller.stateError.value.isEmpty &&
+                          controller.pincodeError.value.isEmpty,
                       onPressed: () async {
                         try {
                           if (await controller.register()) {
@@ -79,10 +112,10 @@ class RegisterPage extends StatelessWidget {
                       },
                       text: registerButtonText,
                     )),
-                const SizedBox(height: 16),
+                const SizedBox(height: 8),
                 TextButton(
                   onPressed: () => Get.toNamed('/login'),
-                  child: Text(
+                  child: const Text(
                     loginPrompt,
                     style: loginPromptStyle,
                   ),

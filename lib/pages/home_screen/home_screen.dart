@@ -15,13 +15,8 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: accentBlue
-            // gradient: LinearGradient(
-            //   begin: Alignment.topCenter,
-            //   end: Alignment.bottomCenter,
-            //   colors: [Colors.lightBlue[100]!, accentBlue],
-            // ),
           ),
           child: SingleChildScrollView(
             padding: const EdgeInsets.all(16.0),
@@ -193,34 +188,6 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-      bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: accentBlue,
-          height: 50,
-          items: const [
-            Icon(Icons.home_rounded, semanticLabel: 'Home'),
-            Icon(Icons.analytics_outlined, semanticLabel: 'Analytics'),
-            Icon(Icons.subscriptions, semanticLabel: 'Subscriptions'),
-            Icon(Icons.settings, semanticLabel: 'Settings'),
-          ],
-          onTap: (index) {
-            switch (index) {
-              case 0:
-                Get.toNamed('/home'); // Already on Home, optional refresh
-                break;
-              case 1:
-                Get.toNamed('/analytics');
-                break;
-              case 2:
-                Get.toNamed('/subscriptions');
-                break;
-              case 3:
-                Get.toNamed('/settings');
-                break;
-            }
-          },
-        ),
-        
-   
       ),
     );
   }

@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:ropay_app/constants/colors.dart';
 import 'package:ropay_app/constants/string_constants.dart';
 import 'package:ropay_app/constants/text_styles.dart';
-import 'package:ropay_app/pages/login_screen/login_controller.dart';
+import 'package:ropay_app/pages/signIn/sign_in_controller.dart';
 import 'package:ropay_app/routes/app_routes.dart';
 import 'package:ropay_app/widgets/custom_widget.dart';
 
-class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+class SignInScreen extends StatelessWidget {
+  const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final LoginController controller = Get.put(LoginController());
-
-    return Scaffold(
+    
+    final SignInController controller = Get.put(SignInController());
+     return Scaffold(
       backgroundColor: white,
       body: SafeArea(
         child: SingleChildScrollView(
@@ -26,13 +27,13 @@ class LoginPage extends StatelessWidget {
               Image.asset('assets/images/droplet.jpg', width: 90, height: 80,),
               const SizedBox(height: 16,),
               const Text(
-                "Welcome Back",
+                "Welcome ",
                 style: titleStyle,
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 12,),
               const Text(
-                "We are glad to see you again!\n Please select your role",
+                "We are glad to see you!\n Please select your role",
                 style: labelStyle,
                 textAlign: TextAlign.center,
               ),
@@ -63,37 +64,21 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               )),
-              const SizedBox(height: 24),
-              Obx(() => CustomTextField(
-                    controller: controller.mobileController,
-                    label: mobileLabel,
-                    errorText: controller.mobileError.value,
-                    keyboardType: TextInputType.phone,
-                    onChanged: (_) => controller.validateMobile(),
-                  )),
-              const SizedBox(height: 16),
-              Obx(() => CustomTextField(
-                    controller: controller.passwordController,
-                    label: 'OTP',
-                    errorText: controller.passwordError.value,
-                    obscureText: true,
-                    keyboardType: TextInputType.number,
-                    onChanged: (_) => controller.validatePassword(),
-                  )),
-              const SizedBox(height: 24),
+           
+              const SizedBox(height: 20),
+             
               Obx(() => CustomButton(
                     isLoading: controller.isLoading.value,
-                    isEnabled: controller.mobileError.value.isEmpty &&
-                        controller.passwordError.value.isEmpty &&
+                    isEnabled:
                         controller.selectedRole.value.isNotEmpty,
                     onPressed: () async {
                       try {
                         if (await controller.login()) {
-                          Get.offNamed(AppRoutes.mainNavigation);
+                          Get.offNamed(AppRoutes.register);
                         } else {
                           Get.snackbar(
                             errorTitle,
-                            'Login failed. Please check your credentials.',
+                            'Selection failed. Please select your role.',
                             backgroundColor: Colors.red,
                             colorText: Colors.white,
                           );
@@ -107,16 +92,9 @@ class LoginPage extends StatelessWidget {
                         );
                       }
                     },
-                    text: 'Login',
+                    text: 'Start',
                   )),
-              const SizedBox(height: 16),
-              TextButton(
-                onPressed: () => Get.toNamed('/register'),
-                child: const Text(
-                  'Don’t have an account? Register',
-                  style: loginPromptStyle,
-                ),
-              ),
+           
             ],
           ),
         ),
@@ -124,11 +102,12 @@ class LoginPage extends StatelessWidget {
     );
   }
 
+  
   Column customAccountField(String image, String text, bool isSelected) {
     return Column(
       children: [
         Container(
-          height: 100,
+          height: 150,
           width: 150,
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
@@ -150,4 +129,3 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-

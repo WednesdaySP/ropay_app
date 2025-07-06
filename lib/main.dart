@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
          primaryTextTheme: GoogleFonts.poppinsTextTheme(),
         //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: AppRoutes.register,
+      initialRoute: AppRoutes.splashScreen,
       getPages: AppRoutes.routes,
     );
   }

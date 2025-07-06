@@ -6,13 +6,19 @@ class RegisterController extends GetxController {
   // Controllers for text fields
   final nameController = TextEditingController();
   final mobileController = TextEditingController();
-  final locationController = TextEditingController();
+  final addressController = TextEditingController();
+  final cityController = TextEditingController();
+  final stateController = TextEditingController();
+  final pincodeController = TextEditingController();
 
   // Reactive variables
   final isLoading = false.obs;
   final nameError = ''.obs;
   final mobileError = ''.obs;
-  final locationError = ''.obs;
+  final addressError = ''.obs;
+  final cityError = ''.obs;
+  final stateError = ''.obs;
+  final pincodeError = ''.obs;
 
   // Validate name field
   void validateName() {
@@ -38,13 +44,45 @@ class RegisterController extends GetxController {
     }
   }
 
-  // Validate location field
-  void validateLocation() {
-    final location = locationController.text.trim();
-    if (location.isEmpty) {
-      locationError.value = 'Location is required';
+  // Validate address field
+  void validateAddress() {
+    final address = addressController.text.trim();
+    if (address.isEmpty) {
+      addressError.value = 'Address is required';
     } else {
-      locationError.value = '';
+      addressError.value = '';
+    }
+  }
+
+  // Validate city field
+  void validateCity() {
+    final city = cityController.text.trim();
+    if (city.isEmpty) {
+      cityError.value = 'City is required';
+    } else {
+      cityError.value = '';
+    }
+  }
+
+  // Validate state field
+  void validateState() {
+    final state = stateController.text.trim();
+    if (state.isEmpty) {
+      stateError.value = 'State is required';
+    } else {
+      stateError.value = '';
+    }
+  }
+
+  // Validate pincode field
+  void validatePincode() {
+    final pincode = pincodeController.text.trim();
+    if (pincode.isEmpty) {
+      pincodeError.value = 'Pincode is required';
+    } else if (!RegExp(r'^\d{6}$').hasMatch(pincode)) {
+      pincodeError.value = 'Enter a valid 6-digit pincode';
+    } else {
+      pincodeError.value = '';
     }
   }
 
@@ -53,12 +91,18 @@ class RegisterController extends GetxController {
     // Validate all fields before proceeding
     validateName();
     validateMobile();
-    validateLocation();
+    validateAddress();
+    validateCity();
+    validateState();
+    validatePincode();
 
     // Check if there are any validation errors
     if (nameError.value.isNotEmpty ||
         mobileError.value.isNotEmpty ||
-        locationError.value.isNotEmpty) {
+        addressError.value.isNotEmpty ||
+        cityError.value.isNotEmpty ||
+        stateError.value.isNotEmpty ||
+        pincodeError.value.isNotEmpty) {
       return false;
     }
 
@@ -86,7 +130,10 @@ class RegisterController extends GetxController {
     // Dispose controllers to prevent memory leaks
     nameController.dispose();
     mobileController.dispose();
-    locationController.dispose();
+    addressController.dispose();
+    cityController.dispose();
+    stateController.dispose();
+    pincodeController.dispose();
     super.onClose();
   }
 }

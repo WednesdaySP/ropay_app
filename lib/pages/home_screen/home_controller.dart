@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
+  RxInt currentIndex = 0.obs;
   final currentIntake = 500.0.obs;
   final targetIntake = 2000.0.obs;
   final lastIntakeTime = '10:24 AM'.obs;

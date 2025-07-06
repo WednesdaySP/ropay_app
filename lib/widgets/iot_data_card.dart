@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ropay_app/constants/colors.dart';
 
 class IoTDataCard extends StatelessWidget {
   final String title;
@@ -44,7 +45,7 @@ class IoTDataCard extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(icon, size: 30, color: Colors.white),
+          Icon(icon, size: 30, color:white),
           const SizedBox(height: 8),
           Text(
             title,
@@ -54,7 +55,7 @@ class IoTDataCard extends StatelessWidget {
           const SizedBox(height: 4),
           Text(
             value,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: white),
             textAlign: TextAlign.center,
           ),
         ],

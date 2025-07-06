@@ -30,12 +30,12 @@ InputDecoration customInputDecoration(String label, String? errorText) {
   return InputDecoration(
     labelText: label,
     labelStyle: labelStyle,
-    contentPadding: EdgeInsets.symmetric(vertical: 12,horizontal: 16),
+    contentPadding: const EdgeInsets.symmetric(vertical: 12,horizontal: 16),
     border: OutlineInputBorder(
         borderRadius: BorderRadius.circular(12),
-        borderSide: BorderSide(color: Colors.black, width: 1)),
+        borderSide: const BorderSide(color: Colors.black, width: 1)),
     focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: primaryBlue, width: 1),
+      borderSide: const BorderSide(color: primaryBlue, width: 1),
       borderRadius: BorderRadius.circular(12),
     ),
     errorText: errorText?.isEmpty ?? true ? null : errorText,
