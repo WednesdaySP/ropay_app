@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ropay_app/pages/mqtt_example.dart';
 import 'package:ropay_app/routes/app_routes.dart';
 
 void main() {
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
          primaryTextTheme: GoogleFonts.poppinsTextTheme(),
         //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      initialRoute: AppRoutes.splashScreen,
-      getPages: AppRoutes.routes,
+      home: MqttExample(),
+      // initialRoute: AppRoutes.splashScreen,
+      // getPages: AppRoutes.routes,
     );
   }
 }
