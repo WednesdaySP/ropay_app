@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:ropay_app/local_strings.dart';
 import 'package:ropay_app/pages/mqtt_example.dart';
 import 'package:ropay_app/routes/app_routes.dart';
 
@@ -14,6 +15,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      locale: const Locale('en', 'US'),
+      translations: LocalStrings(),
       title: 'RoPay',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
