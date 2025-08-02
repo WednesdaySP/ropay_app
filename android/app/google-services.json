@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "946262493532",
+    "project_id": "ropay-ac1d2",
+    "storage_bucket": "ropay-ac1d2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:946262493532:android:c5a22ad519165a7ad49999",
+        "android_client_info": {
+          "package_name": "com.example.ropay_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvM-9P5s-CBUJ7cpLd4lp3eccixqg8--M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

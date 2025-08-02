@@ -172,8 +172,9 @@ class _MqttExampleState extends State<MqttExample> {
             ElevatedButton(
               onPressed: () {
                 var local = Locale('hi', 'IN');
-                publishMessage();
+                
                 Get.updateLocale(local);
+                publishMessage();
               },
               child: const Text('Publish Test Message'),
             ),

@@ -17,6 +17,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       locale: const Locale('en', 'US'),
       translations: LocalStrings(),
+      fallbackLocale: const Locale('en', 'IN'),
+      supportedLocales: const [
+            Locale('en', 'IN'),
+            Locale('hi', 'IN'),
+      ],
       title: 'RoPay',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -24,9 +29,9 @@ class MyApp extends StatelessWidget {
          primaryTextTheme: GoogleFonts.poppinsTextTheme(),
         //visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MqttExample(),
-      // initialRoute: AppRoutes.splashScreen,
-      // getPages: AppRoutes.routes,
+      // home: MqttExample(),
+      initialRoute: AppRoutes.mainNavigation,
+      getPages: AppRoutes.routes,
     );
   }
 }

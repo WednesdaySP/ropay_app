@@ -1,4 +1,3 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:ropay_app/constants/colors.dart';
@@ -23,14 +22,14 @@ class HomePage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Good Morning,',
+                          'greeting'.tr,
                           style: TextStyle(fontSize: 14, color: black,fontWeight: FontWeight.w500),
                         ),
                         Text(
@@ -151,31 +150,31 @@ class HomePage extends StatelessWidget {
                   runSpacing: 16.0,
                   children: [
                     IoTDataCard(
-                      title: 'Water pH Level',
+                      title: 'ph_level'.tr,
                       value: '${controller.waterPhLevel.value} pH',
                       icon: Icons.water_drop,
                       gradientColors: [Colors.lightBlue[100]!, accentBlue],
                     ),
                     IoTDataCard(
-                      title: 'Temperature',
+                      title: 'temperature'.tr,
                       value: '${controller.temperature.value}°C',
                       icon: Icons.thermostat,
                       gradientColors: [Colors.teal[100]!, accentBlue],
                     ),
                     IoTDataCard(
-                      title: 'Water Quality Index',
+                      title: 'water_quality_index'.tr,
                       value: '${controller.waterQualityIndex.value}',
                       icon: Icons.assessment,
                       gradientColors: [Colors.green[100]!, accentBlue],
                     ),
                     IoTDataCard(
-                      title: 'Filter Life',
+                      title: 'filter_life'.tr,
                       value: '${controller.filterLife.value}%',
                       icon: Icons.filter_alt,
                       gradientColors: [Colors.orange[100]!, accentBlue],
                     ),
                     IoTDataCard(
-                      title: 'Plan Expiry Date',
+                      title: 'plan_expiry_date'.tr,
                       value: controller.planExpiryDate.value,
                       icon: Icons.calendar_today,
                       gradientColors: [Colors.purple[100]!, accentBlue],

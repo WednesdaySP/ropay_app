@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:ropay_app/constants/colors.dart';
 
 class SubscriptionsPage extends StatelessWidget {
@@ -8,7 +9,7 @@ class SubscriptionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Subscriptions', style: TextStyle(color: black)),
+        title:  Text('subscriptions_title'.tr, style: TextStyle(color: black)),
         backgroundColor: white,
         elevation: 0,
         centerTitle: true,
@@ -20,41 +21,35 @@ class SubscriptionsPage extends StatelessWidget {
           children: [
             _buildSubscriptionCard(
               context:context,
-              title: 'Basic Plan',
+              title: 'basic_plan'.tr,
               price: '₹199/month',
               features: [
-                'Track water usage for 1 device',
-                'Monthly usage reports',
-                'Basic customer support',
-                '10% discount on repairs',
+                'basic_plan_features'.tr,
               ],
             ),
             const SizedBox(height: 16),
             _buildSubscriptionCard(
               context:context,
-              title: 'Pro Plan',
+              title: 'pro_plan'.tr,
               price: '₹399/month',
               features: [
-                'Track water usage for up to 3 devices',
-                'Detailed monthly & weekly reports',
-                'Priority customer support',
-                '20% discount on repairs',
-                'Leak detection alerts',
+                'pro_plan_features'.tr,
               ],
               isHighlighted: true,
             ),
             const SizedBox(height: 16),
             _buildSubscriptionCard(
               context:context,
-              title: 'Premium Plan',
+              title: 'premium_plan'.tr,
               price: '₹599/month',
               features: [
-                'Track water usage for unlimited devices',
-                'Real-time usage analytics',
-                '24/7 premium support',
-                '30% discount on repairs',
-                'Advanced leak & wastage alerts',
-                'Custom water-saving tips',
+                'premium_plan_features'.tr,
+                // 'Track water usage for unlimited devices',
+                // 'Real-time usage analytics',
+                // '24/7 premium support',
+                // '30% discount on repairs',
+                // 'Advanced leak & wastage alerts',
+                // 'Custom water-saving tips',
               ],
             ),
           ],
@@ -144,7 +139,7 @@ class SubscriptionsPage extends StatelessWidget {
                 ),
                 padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
               ),
-              child: const Text('Subscribe Now'),
+              child: Text('subscribe_now'.tr, style: const TextStyle(fontSize: 16)),
             ),
           ],
         ),
